@@ -37,19 +37,17 @@ We will be using this in our User’s profile page to store the user’s name and ot
       HOME SCREEN
 ![1](https://user-images.githubusercontent.com/78819149/160342010-bb3492d9-19bf-4571-95d2-6cdddd384d12.png)
       		
-<img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EZhH8xa-921EmiLOtvgNZGEBlB7A-ic5IxeLWkSCsUVkAg?e=Cc6WaB" alt="Alt text" title="Optional title">
   
   
       MESSAGING SCREEN
-<img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EW0ImL-DqPlKtt_Waj3d1_QBk0DAvsX1AyQJsep1B-MgBA?e=smHXpm" alt="Alt text" title="Optional title">
+![2](https://user-images.githubusercontent.com/78819149/160342023-8e145c21-a35f-4b1a-b05e-acbb0039763d.png)
   
   
        SEARCH SCREEN
-<img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EUe_fecHE8lIvv49ZIjVUhQBYuTquviXOZ5vhE9NVmdj4g?e=GdZhDg" alt="Alt text" title="Optional title">
+![3](https://user-images.githubusercontent.com/78819149/160342041-9cf5463f-6bfa-48ae-aa33-6c52f87fb69a.png)
   
      Profiles Page
-<img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EW4DLIo6hE9Pi4y4gtfdtCYBqYOopYN2NbPIKC8WsLZg4A?e=MxnkeI" alt="Alt text" title="Optional title">
-
+![4](https://user-images.githubusercontent.com/78819149/160342077-de90af18-9747-4a87-88f5-495c440c9eed.png)
   
 Useful Android APIs: 
 
