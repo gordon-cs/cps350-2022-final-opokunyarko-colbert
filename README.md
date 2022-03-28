@@ -2,26 +2,34 @@
 
 
 BAZAAR
+
 Bazaar is an area that is always used for shopping. It can be a marketplace or a street of shops where things are exchanged or sold.
 
 TARGET USERS:
+
 Bazaar is a trade and barter oriented marketplace for users interested in trading their items with others. 
 
 PRIMARY FEATURES:
+
 Bazaar will feature a simple product listing UI through which users can search, trade, postListing, sendMessage, 
 
 WHAT PROBLEM DOES THIS SOLVE?
+
 It is an easy way for people without (enough) money to get what they need in exchange for something they already have. Users also get the chance to communicate among themselves to be able to negotiate the value of products to be exchanged or purchased 
 
 APIs TO BE USED
+
       SharedPreferences (DataStore API):
+      
 * This API helps in storing key-value pairs such as the user’s settings, IDs, name… 
 We will be using this in our User’s profile page to store the user’s name and other useful information about the user
 
       AppSearch
+      
 * An on-device search library for managing locally stored structured data. We will use it to build custom in-app search capabilities for users.
 
       Google Content API for Shopping:
+      
 * This lets users insert, get, update and delete one product at a time. We will use this to help Users upload products, update products and delete products when they successfully sell them.
 
 
@@ -32,7 +40,7 @@ We will be using this in our User’s profile page to store the user’s name and ot
 
 
 
-      BAZAAR’S UI
+      \BAZAAR\'S UI\
 
       HOME SCREEN
 ![1](https://user-images.githubusercontent.com/78819149/160342010-bb3492d9-19bf-4571-95d2-6cdddd384d12.png)
