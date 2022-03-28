@@ -34,7 +34,9 @@ We will be using this in our User’s profile page to store the user’s name and ot
 
       BAZAAR’S UI
 
-      HOME SCREEN		
+      HOME SCREEN
+![1](https://user-images.githubusercontent.com/78819149/160342010-bb3492d9-19bf-4571-95d2-6cdddd384d12.png)
+      		
 <img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EZhH8xa-921EmiLOtvgNZGEBlB7A-ic5IxeLWkSCsUVkAg?e=Cc6WaB" alt="Alt text" title="Optional title">
   
   
