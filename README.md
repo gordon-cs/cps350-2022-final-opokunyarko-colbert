@@ -66,7 +66,7 @@ We will be using this in our User’s profile page to store the user’s name and ot
 * Savedstate: Components that save UI state 
 * CardView: Implement the Material Design card pattern with round corners and drop shadows.
 
-## Useful RESTful APIs: 
+## Useful RESTful APIs 
 
 * Google Content API for Shopping: Database of products specific to a seller/app and will not contain data that isn’t put in ourselves
 
