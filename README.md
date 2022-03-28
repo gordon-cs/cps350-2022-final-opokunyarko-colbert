@@ -11,13 +11,14 @@ Bazaar is an area that is always used for shopping. It can be a marketplace or a
 Bazaar is a trade and barter oriented marketplace for users interested in trading their items with others.Ê
 
 
-## PRIMARY FEATURES:
-
-Bazaar will feature a simple product listing UI through which users can search, trade, postListing, sendMessage,Ê
-
 ## WHAT PROBLEM DOES THIS SOLVE?
 
 It is an easy way for people without (enough) money to get what they need in exchange for something they already have. Users also get the chance to communicate among themselves to be able to negotiate the value of products to be exchanged or purchasedÊ
+
+
+## PRIMARY FEATURES:
+
+Bazaar will feature a simple product listing UI through which users can search, trade, postListing, viewListing, and sendMessage.Ê
 
 
 ## APIs TO BE USED
@@ -34,6 +35,11 @@ We will be using this in our UserÕs profile page to store the userÕs name and 
         Google Content API for Shopping:
       
 * This lets users insert, get, update and delete one product at a time. We will use this to help Users upload products, update products and delete products when they successfully sell them.
+
+
+## PROTOTYPE
+
+Our prototype is expected to demonstrate Bazaar’s persistent storage system with Android’s DataStore/Room APIs and Google’s Content API. It will support search and trade features. While a nice addition to our app, messaging may not be an achievable goal by the prototype deadline. 
 
 
 ## BAZAAR'S UI
