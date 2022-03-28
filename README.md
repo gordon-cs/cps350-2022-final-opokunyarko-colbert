@@ -55,7 +55,7 @@ We will be using this in our User’s profile page to store the user’s name and ot
 ![4](https://user-images.githubusercontent.com/78819149/160342077-de90af18-9747-4a87-88f5-495c440c9eed.png)
 
   
-## Useful Android APIs 
+## Useful Android APIS 
 
 * Databinding: Bind UI components in layouts to data sources in app. (For browsing shopping items?)
 * DataStore: Store data asynchronously, consistently, and transactionally, overcoming some of the drawbacks of SharedPreferences
@@ -66,7 +66,7 @@ We will be using this in our User’s profile page to store the user’s name and ot
 * Savedstate: Components that save UI state 
 * CardView: Implement the Material Design card pattern with round corners and drop shadows.
 
-## Useful RESTful APIs 
+## Useful RESTful APIS 
 
 * Google Content API for Shopping: Database of products specific to a seller/app and will not contain data that isn’t put in ourselves
 
