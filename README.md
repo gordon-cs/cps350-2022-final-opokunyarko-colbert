@@ -35,29 +35,19 @@ We will be using this in our User’s profile page to store the user’s name and ot
       BAZAAR’S UI
 
       HOME SCREEN		
-<img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EZhH8xa-921EmiLOtvgNZGEBlB7A-ic5IxeLWkSCsUVkAg?e=Cc6WaB"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
+<img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EZhH8xa-921EmiLOtvgNZGEBlB7A-ic5IxeLWkSCsUVkAg?e=Cc6WaB" alt="Alt text" title="Optional title">
   
   
       MESSAGING SCREEN
-<img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EW0ImL-DqPlKtt_Waj3d1_QBk0DAvsX1AyQJsep1B-MgBA?e=smHXpm"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
+<img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EW0ImL-DqPlKtt_Waj3d1_QBk0DAvsX1AyQJsep1B-MgBA?e=smHXpm" alt="Alt text" title="Optional title">
+  
   
        SEARCH SCREEN
-  <img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EUe_fecHE8lIvv49ZIjVUhQBYuTquviXOZ5vhE9NVmdj4g?e=UWSXJG"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
+<img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EUe_fecHE8lIvv49ZIjVUhQBYuTquviXOZ5vhE9NVmdj4g?e=GdZhDg" alt="Alt text" title="Optional title">
   
      Profiles Page
- <img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EUe_fecHE8lIvv49ZIjVUhQBYuTquviXOZ5vhE9NVmdj4g?e=UWSXJG"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
+<img src="https://gordonedu-my.sharepoint.com/:i:/g/personal/elijah_opoku-nyarko_gordon_edu/EW4DLIo6hE9Pi4y4gtfdtCYBqYOopYN2NbPIKC8WsLZg4A?e=MxnkeI" alt="Alt text" title="Optional title">
+
   
 Useful Android APIs: 
 
