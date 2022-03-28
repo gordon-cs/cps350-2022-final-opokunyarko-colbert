@@ -70,12 +70,12 @@ Our prototype is expected to demonstrate Bazaar’s persistent storage system wi
 * CameraX: Add camera capabilities to app
 * Room: Create, store and manage persistent data backed by a SQLite database
 * App Search: Build custom in-app search capabilities for your users.
-* Savedstate: Components that save UI stateÊ
+* Savedstate: Components that save UI state.
 * CardView: Implement the Material Design card pattern with round corners and drop shadows.
 
 ## Useful RESTful APIs
 
-* Google Content API for Shopping: Database of products specific to a seller/app and will not contain data that isnÕt put in ourselves
+* Google Content API for Shopping: Database of products specific to a seller/app and will not contain data that isn't put in ourselves
 
 
 
