@@ -40,7 +40,7 @@ We will be using this in our User’s profile page to store the user’s name and ot
 
 
 
-      \BAZAAR\'S UI\
+      \*BAZAAR'S UI\*
 
       HOME SCREEN
 ![1](https://user-images.githubusercontent.com/78819149/160342010-bb3492d9-19bf-4571-95d2-6cdddd384d12.png)
