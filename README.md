@@ -8,24 +8,24 @@ Bazaar is an area that is always used for shopping. It can be a marketplace or a
 
 ## TARGET USERS:
 
-Bazaar is a trade and barter oriented marketplace for users interested in trading their items with others. 
+Bazaar is a trade and barter oriented marketplace for users interested in trading their items with others.√ä
 
 
 ## PRIMARY FEATURES:
 
-Bazaar will feature a simple product listing UI through which users can search, trade, postListing, sendMessage, 
+Bazaar will feature a simple product listing UI through which users can search, trade, postListing, sendMessage,√ä
 
 ## WHAT PROBLEM DOES THIS SOLVE?
 
-It is an easy way for people without (enough) money to get what they need in exchange for something they already have. Users also get the chance to communicate among themselves to be able to negotiate the value of products to be exchanged or purchased 
+It is an easy way for people without (enough) money to get what they need in exchange for something they already have. Users also get the chance to communicate among themselves to be able to negotiate the value of products to be exchanged or purchased√ä
 
 
 ## APIs TO BE USED
 
         SharedPreferences (DataStore API):
       
-* This API helps in storing key-value pairs such as the user’s settings, IDs, name… 
-We will be using this in our User’s profile page to store the user’s name and other useful information about the user
+* This API helps in storing key-value pairs such as the user√ïs settings, IDs, name√â√ä
+We will be using this in our User√ïs profile page to store the user√ïs name and other useful information about the user
 
         AppSearch
       
@@ -55,7 +55,7 @@ We will be using this in our User’s profile page to store the user’s name and ot
 ![4](https://user-images.githubusercontent.com/78819149/160342077-de90af18-9747-4a87-88f5-495c440c9eed.png)
 
   
-## Useful Android APIS 
+## Useful Android APIs
 
 * Databinding: Bind UI components in layouts to data sources in app. (For browsing shopping items?)
 * DataStore: Store data asynchronously, consistently, and transactionally, overcoming some of the drawbacks of SharedPreferences
@@ -63,12 +63,12 @@ We will be using this in our User’s profile page to store the user’s name and ot
 * CameraX: Add camera capabilities to app
 * Room: Create, store and manage persistent data backed by a SQLite database
 * App Search: Build custom in-app search capabilities for your users.
-* Savedstate: Components that save UI state 
+* Savedstate: Components that save UI state√ä
 * CardView: Implement the Material Design card pattern with round corners and drop shadows.
 
-## Useful RESTful APIS 
+## Useful RESTful APIs
 
-* Google Content API for Shopping: Database of products specific to a seller/app and will not contain data that isn’t put in ourselves
+* Google Content API for Shopping: Database of products specific to a seller/app and will not contain data that isn√ït put in ourselves
 
 
 
