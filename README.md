@@ -8,17 +8,17 @@ Bazaar is an area that is always used for shopping. It can be a marketplace or a
 
 ## TARGET USERS:
 
-Bazaar is a trade and barter oriented marketplace for users interested in trading their items with others.Ê
+Bazaar is a trade and barter oriented marketplace for users interested in trading their items with others.
 
 
 ## WHAT PROBLEM DOES THIS SOLVE?
 
-It is an easy way for people without (enough) money to get what they need in exchange for something they already have. Users also get the chance to communicate among themselves to be able to negotiate the value of products to be exchanged or purchasedÊ
+It is an easy way for people without (enough) money to get what they need in exchange for something they already have. Users also get the chance to communicate among themselves to be able to negotiate the value of products to be exchanged or purchased.
 
 
 ## PRIMARY FEATURES:
 
-Bazaar will feature a simple product listing UI through which users can search, trade, postListing, viewListing, and sendMessage.Ê
+Bazaar will feature a simple product listing UI through which users can search, trade, postListing, viewListing, and sendMessage.
 
 
 ## APIs TO BE USED
