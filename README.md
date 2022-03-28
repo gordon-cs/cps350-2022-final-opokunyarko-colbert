@@ -22,16 +22,16 @@ It is an easy way for people without (enough) money to get what they need in exc
 
 ## APIs TO BE USED
 
-    SharedPreferences (DataStore API):
+        SharedPreferences (DataStore API):
       
 * This API helps in storing key-value pairs such as the user’s settings, IDs, name… 
 We will be using this in our User’s profile page to store the user’s name and other useful information about the user
 
-    AppSearch
+        AppSearch
       
 * An on-device search library for managing locally stored structured data. We will use it to build custom in-app search capabilities for users.
 
-    Google Content API for Shopping:
+        Google Content API for Shopping:
       
 * This lets users insert, get, update and delete one product at a time. We will use this to help Users upload products, update products and delete products when they successfully sell them.
 
