@@ -1,65 +1,61 @@
 # cps350-2022-final-bazaar-opokunyarko-colbert
 
 
-BAZAAR
+# BAZAAR
 
 Bazaar is an area that is always used for shopping. It can be a marketplace or a street of shops where things are exchanged or sold.
 
-TARGET USERS:
+
+## TARGET USERS:
 
 Bazaar is a trade and barter oriented marketplace for users interested in trading their items with others. 
 
-PRIMARY FEATURES:
+
+## PRIMARY FEATURES:
 
 Bazaar will feature a simple product listing UI through which users can search, trade, postListing, sendMessage, 
 
-WHAT PROBLEM DOES THIS SOLVE?
+## WHAT PROBLEM DOES THIS SOLVE?
 
 It is an easy way for people without (enough) money to get what they need in exchange for something they already have. Users also get the chance to communicate among themselves to be able to negotiate the value of products to be exchanged or purchased 
 
-APIs TO BE USED
 
-      SharedPreferences (DataStore API):
+## APIs TO BE USED
+
+    SharedPreferences (DataStore API):
       
 * This API helps in storing key-value pairs such as the user’s settings, IDs, name… 
 We will be using this in our User’s profile page to store the user’s name and other useful information about the user
 
-      AppSearch
+    AppSearch
       
 * An on-device search library for managing locally stored structured data. We will use it to build custom in-app search capabilities for users.
 
-      Google Content API for Shopping:
+    Google Content API for Shopping:
       
 * This lets users insert, get, update and delete one product at a time. We will use this to help Users upload products, update products and delete products when they successfully sell them.
 
 
-
-
-
-
-
-
-
-      BAZAAR'S UI
+## BAZAAR'S UI
       
 
-      HOME SCREEN
+        ## HOME SCREEN
 ![1](https://user-images.githubusercontent.com/78819149/160342010-bb3492d9-19bf-4571-95d2-6cdddd384d12.png)
       		
   
   
-      MESSAGING SCREEN
+## MESSAGING SCREEN
 ![2](https://user-images.githubusercontent.com/78819149/160342023-8e145c21-a35f-4b1a-b05e-acbb0039763d.png)
   
   
-       SEARCH SCREEN
+## SEARCH SCREEN
 ![3](https://user-images.githubusercontent.com/78819149/160342041-9cf5463f-6bfa-48ae-aa33-6c52f87fb69a.png)
   
-     Profiles Page
+## Profiles Page
 ![4](https://user-images.githubusercontent.com/78819149/160342077-de90af18-9747-4a87-88f5-495c440c9eed.png)
-  
-Useful Android APIs: 
 
+  
+## Useful Android APIs 
 
 * Databinding: Bind UI components in layouts to data sources in app. (For browsing shopping items?)
 * DataStore: Store data asynchronously, consistently, and transactionally, overcoming some of the drawbacks of SharedPreferences
@@ -70,8 +66,7 @@ Useful Android APIs: 
 * Savedstate: Components that save UI state 
 * CardView: Implement the Material Design card pattern with round corners and drop shadows.
 
-Useful RESTful APIs: 
-
+## Useful RESTful APIs: 
 
 * Google Content API for Shopping: Database of products specific to a seller/app and will not contain data that isn’t put in ourselves
 
