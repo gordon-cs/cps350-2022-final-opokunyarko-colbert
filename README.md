@@ -40,7 +40,7 @@ We will be using this in our User’s profile page to store the user’s name and ot
 
 
 
-      \BAZAAR'S UI
+      BAZAAR'S UI
       
 
       HOME SCREEN
