@@ -23,16 +23,17 @@ Bazaar will feature a simple product listing UI through which users can search, 
 
 ## APIs TO BE USED
 
-        SharedPreferences (DataStore API):
-      
+
+[SharedPreferences:](https://developer.android.com/jetpack/androidx/releases/datastore)
+
 * This API helps in storing key-value pairs such as the users settings, IDs, name
 We will be using this in our Users profile page to store the users name and other useful information about the user
 
-        AppSearch
+[AppSearch:](https://developer.android.com/jetpack/androidx/releases/appsearch)
       
 * An on-device search library for managing locally stored structured data. We will use it to build custom in-app search capabilities for users.
 
-        Google Content API for Shopping:
+[Google Content for Shopping:](https://developers.google.com/shopping-content/guides/products/products-api)
       
 * This lets users insert, get, update and delete one product at a time. We will use this to help Users upload products, update products and delete products when they successfully sell them.
 
