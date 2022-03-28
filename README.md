@@ -25,8 +25,8 @@ Bazaar will feature a simple product listing UI through which users can search, 
 
         SharedPreferences (DataStore API):
       
-* This API helps in storing key-value pairs such as the userÕs settings, IDs, nameÉÊ
-We will be using this in our UserÕs profile page to store the userÕs name and other useful information about the user
+* This API helps in storing key-value pairs such as the users settings, IDs, name
+We will be using this in our Users profile page to store the users name and other useful information about the user
 
         AppSearch
       
