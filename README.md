@@ -1,5 +1,6 @@
 # cps350-2022-final-bazaar-opokunyarko-colbert
 
+*This README.md describes the uses and purposes of Bazaar. This repo is split into two folders each containing p2 and p3 projects respectively.*
 
 # BAZAAR
 
