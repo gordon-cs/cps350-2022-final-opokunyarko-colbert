@@ -1,4 +1,4 @@
-package com.example.roomapi
+package com.plcoding.datastoreandroid
 
 import org.junit.Test
 
