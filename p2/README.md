@@ -1,6 +1,6 @@
 # DataStore 
 
-This repo includes 2 demos sourced from android's developer website. 
+This folder includes 2 demos sourced from android's developer website. 
 
 Jetpack DataStore is a data storage solution. 
 There are two types of [Data Store](https://developer.android.com/topic/libraries/architecture/datastore): 
