@@ -58,12 +58,12 @@ if __name__ == "__main__":
 		
 		while(True):
 			choice = input("Choose one of the answers: 1, 2, 3, or 4...\n")
-			if choice in [1, 2, 3, 4]:
+			if choice in ["1", "2", "3", "4"]:
 				break;
 			else:
 				print("\n" + RED + "Please choose a number for one of the answers above" + END + "\n")
 			
-		if (answers[choice - 1] == question["correctAnswer"]):
+		if (answers[int(choice) - 1] == question["correctAnswer"]):
 			correct += 1
 			print(GREEN + "\nThat's correct! Nice job!\n" + END)
 		else:
