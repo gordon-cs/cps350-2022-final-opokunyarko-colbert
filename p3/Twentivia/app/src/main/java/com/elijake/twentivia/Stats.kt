@@ -1,40 +1,35 @@
 package com.elijake.twentivia
 
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.widget.GridView
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.elijake.twentivia.databinding.ActivityStatsBinding
+import com.elijake.twentivia.StatFeed
+import com.example.apptitudetest.StatAdapter
 
 class Stats : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityStatsBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_stats)
+        supportActionBar?.hide();
 
-        binding = ActivityStatsBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val allStat: ArrayList<StatFeed> = ArrayList();
+        allStat.add(StatFeed("Total Score", R.drawable.icon_15_trophy));
+        allStat.add(StatFeed("Total Test", R.drawable.forward));
+        allStat.add(StatFeed("Previous Score", R.drawable.iconfinder_12));
+        allStat.add(StatFeed("Time Taken", R.drawable.group_24));
 
-        setSupportActionBar(binding.toolbar)
+        val simpleGrid: GridView = findViewById<GridView>(R.id.simpleGridView);
+        simpleGrid.adapter = StatAdapter(this, allStat);
 
-        val navController = findNavController(R.id.nav_host_fragment_content_stats)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        val nextBtn = findViewById<ImageButton>(R.id.next_btn);
+        nextBtn.setOnClickListener {
+            val intent: Intent = Intent(this, Category::class.java);
+            startActivity(intent)
         }
-    }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_stats)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+
     }
 }

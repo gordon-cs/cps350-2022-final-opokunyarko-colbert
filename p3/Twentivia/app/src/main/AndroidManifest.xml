@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Twentivia">
         <activity
+            android:name=".StatAdapter"
+            android:exported="false"
+            android:label="@string/title_activity_stat_adapter"
+            android:theme="@style/Theme.Twentivia.NoActionBar" />
+        <activity
             android:name=".Stats"
             android:exported="false"
             android:label="@string/title_activity_stats"
