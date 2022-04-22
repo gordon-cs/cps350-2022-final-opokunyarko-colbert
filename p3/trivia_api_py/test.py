@@ -21,10 +21,14 @@ END = "\033[0m" # RESET to reqular terminal color
 CR = "\x0D" # Carrige Return
 CLEAR = "\033[H\033[J"
 
+# Global limit constant
+
+LIMIT = 5
+
 # Get the trivia questions from the API
 
 def getTrivia():
-	url = "https://the-trivia-api.com/api/questions?limit=3&difficulty=easy"
+	url = "https://the-trivia-api.com/api/questions?limit=" + str(LIMIT) + "&difficulty=easy"
 	r = requests.get(url)
 	result = json.loads(r.text)
 	return result
@@ -52,18 +56,23 @@ if __name__ == "__main__":
 		print("4) " + answers[3])
 		print("\n")
 		
-		choice = int(input("Choose one of the answers: 1, 2, 3, or 4...\n"))
-		
+		while(True):
+			choice = input("Choose one of the answers: 1, 2, 3, or 4...\n")
+			if choice in [1, 2, 3, 4]:
+				break;
+			else:
+				print("\n" + RED + "Please choose a number for one of the answers above" + END + "\n")
+			
 		if (answers[choice - 1] == question["correctAnswer"]):
 			correct += 1
 			print(GREEN + "\nThat's correct! Nice job!\n" + END)
 		else:
 			print(RED + "\nThe correct answer was " + question["correctAnswer"] + "\n" + END)
 			
-		os.system('sleep 3')
+		input("Press enter to continue...")
 		print(CLEAR)
 	print(CLEAR)
-	print(YELLOW + "\nYou got " + str(correct) + " out of 20 correct!\n" + END)
+	print(YELLOW + "\nYou got " + str(correct) + " out of " + str(LIMIT) + " correct!\n" + END)
 		
 		
 		
