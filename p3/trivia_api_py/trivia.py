@@ -26,7 +26,7 @@ LIMIT = 20
 # Get the trivia questions from the API
 
 def getTrivia():
-	url = "https://the-trivia-api.com/api/questions?limit=" + str(LIMIT) + "&difficulty=easy"
+	url = "https://the-trivia-api.com/api/questions?limit=" + str(LIMIT)
 	r = requests.get(url)
 	result = json.loads(r.text)
 	return result
