@@ -2,6 +2,7 @@ package com.elijake.twentivia
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
@@ -22,11 +23,11 @@ class TriviaActivity : AppCompatActivity() {
         supportActionBar?.hide();
         setContentView(R.layout.activity_questions)
 
-        val button = findViewById<Button>(R.id.button);
+        val button = findViewById<ImageButton>(R.id.next_btn);
 
         button.setOnClickListener {
             // should reload view with next question and updated timer/questions answered
-            //findViewById<TextView>(R.id.question).text = get();
+            println("Elijah fixed this")
         }
     }
     /*
