@@ -12,9 +12,9 @@ class Category : AppCompatActivity() {
         supportActionBar?.hide();
 
         val startBtn: ImageButton = findViewById(R.id.startBtn);
-        val intent: Intent = Intent(this, Questions::class.java);
 
         startBtn.setOnClickListener {
+            val intent: Intent = Intent(this, TriviaActivity::class.java);
             startActivity(intent);
         }
     }
