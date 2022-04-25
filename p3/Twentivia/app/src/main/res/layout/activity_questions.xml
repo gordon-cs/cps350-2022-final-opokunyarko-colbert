@@ -133,31 +133,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/forward"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/done"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.9"
-            android:background="@drawable/okay"
-            android:elevation="0dp"
-            android:paddingHorizontal="12dp"
-            tools:layout_editor_absoluteY="1dp">
-
-            <ListView
-                android:id="@+id/done_pop"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/okay_shape"
-                android:divider="@null"
-                android:dividerHeight="18dp"
-                android:paddingHorizontal="11dp"
-                android:paddingVertical="9dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
