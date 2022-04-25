@@ -16,8 +16,8 @@ class Stats : AppCompatActivity() {
         supportActionBar?.hide();
 
         val allStat: ArrayList<StatFeed> = ArrayList();
-        allStat.add(StatFeed("Total Score", R.drawable.icon_15_trophy));
-        allStat.add(StatFeed("Total Test", R.drawable.forward));
+        allStat.add(StatFeed("Highest Score", R.drawable.icon_15_trophy));
+        allStat.add(StatFeed("Total Scores", R.drawable.group_25));
         allStat.add(StatFeed("Previous Score", R.drawable.iconfinder_12));
         allStat.add(StatFeed("Time Taken", R.drawable.group_24));
 
