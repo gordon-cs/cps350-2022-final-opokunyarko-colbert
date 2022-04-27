@@ -30,7 +30,8 @@ class TriviaActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             // should reload view with next question and updated timer/questions answered
-            println("Elijah fixed this")
+            //val intent: Intent = Intent(this, TriviaActivity::class.java);
+            //startActivity(intent)
         }
 
         backButton.setOnClickListener {
