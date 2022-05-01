@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Twentivia">
         <activity
+            android:name=".FragmentedActivity"
+            android:exported="false" />
+        <activity
             android:name=".Stats"
             android:exported="false"
             android:label="@string/title_activity_stats"

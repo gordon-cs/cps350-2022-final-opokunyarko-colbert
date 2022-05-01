@@ -9,7 +9,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.elijake.twentivia.QuestionViewModel" />
+            type="com.elijake.twentivia.trivia.QuestionViewModel" />
     </data>
 
     <TextView

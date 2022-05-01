@@ -1,14 +1,12 @@
 package com.elijake.twentivia
 
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
-import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
+import androidx.lifecycle.Observer
+import com.elijake.twentivia.model.Question
+import com.elijake.twentivia.trivia.QuestionViewModel
 
 
 /* NOTES:
@@ -18,20 +16,51 @@ import com.android.volley.toolbox.Volley
 
 
 class TriviaActivity : AppCompatActivity() {
+
+    //
+
+    private val model: QuestionViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide();
         setContentView(R.layout.activity_questions)
 
+        val questionObserver = Observer<Question> { newQuestion ->
+
+
+        }
+
         val button = findViewById<ImageButton>(R.id.next_btn);
 
         button.setOnClickListener {
             // should reload view with next question and updated timer/questions answered
-            println("Elijah fixed this")
+            //model.status.value = nextQuestion()
         }
+
+        model.status.observe(this, questionObserver)
+
+        // initial question
+        //model.status.value = nextQuestion()
     }
-    /*
-    fun get (): String {
-        findViewById<TextView>(R.id.question).text = get("https://the-trivia-api.com/api/questions?limit=1");
-    }*/
+
+    fun nextQuestion() {
+
+    }
+
+    fun updateScore() {
+
+    }
+
+    fun resetTimer() {
+
+    }
+
+    fun checkAnswer(answer: String) : Boolean { // how to wait for multiple buttons???
+        if (answer == model.status.value?.correctAnswer) {
+            return true
+        }
+        return false
+    }
+
 }
