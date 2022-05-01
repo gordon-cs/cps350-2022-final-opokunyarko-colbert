@@ -8,5 +8,5 @@ data class Question(
     // do they need to be private?
     val question: String,
     val correctAnswer: String,
-    val incorrectAnswers: String
+    val incorrectAnswers: List<String>
 )
