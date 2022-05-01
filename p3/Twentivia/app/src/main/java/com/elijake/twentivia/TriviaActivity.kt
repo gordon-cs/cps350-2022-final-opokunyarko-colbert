@@ -2,15 +2,10 @@ package com.elijake.twentivia
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
+import com.elijake.twentivia.network.TriviaAPI;
 
 
 /* NOTES:
@@ -25,13 +20,14 @@ class TriviaActivity : AppCompatActivity() {
         supportActionBar?.hide();
         setContentView(R.layout.activity_questions)
 
-        val button = findViewById<ImageButton>(R.id.next_btn);
+        val nextButton = findViewById<ImageButton>(R.id.next_btn);
         val backButton = findViewById<ImageView>(R.id.imageView2);
 
-        button.setOnClickListener {
-            // should reload view with next question and updated timer/questions answered
-            //val intent: Intent = Intent(this, TriviaActivity::class.java);
-            //startActivity(intent)
+        nextButton.setOnClickListener {
+            Thread {
+                // network calls need to be done in threads
+                TriviaAPI.getTrivia("https://the-trivia-api.com/api/questions?limit=20")
+            }.start()
         }
 
         backButton.setOnClickListener {

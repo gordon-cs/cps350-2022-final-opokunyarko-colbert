@@ -3,7 +3,7 @@ package com.elijake.twentivia.model;
 import java.util.*;
 
 
-public class Question {
+public class TriviaQuestion {
 
     private String question;
     private String correctAnswer;
@@ -29,8 +29,8 @@ public class Question {
      *
      * @return List<String> answers - a list of possible answers
      */
-    public List<String> getSuffledAnswers() {
-        List<String> answers = new List<String>;
+    public List<String> getShuffledAnswers() {
+        List<String> answers = null;
         answers.addAll(incorrectAnswers);
         answers.add(correctAnswer);
 
