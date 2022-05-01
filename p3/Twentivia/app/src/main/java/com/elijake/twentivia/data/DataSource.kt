@@ -11,117 +11,27 @@ object DataSource{
         ),
 
         Question(
-            "",
-            "",
-            listOf("", "")
+            "Question 2",
+            "Correct Answer",
+            listOf("Incorrect Answer 1", "Incorrect Answer 2", "Incorrect Answer 3")
         ),
 
         Question(
-            "",
-            "",
-            listOf("", "")
+            "Question 3",
+            "Correct Answer",
+            listOf("Incorrect Answer 1", "Incorrect Answer 2", "Incorrect Answer 3")
         ),
 
         Question(
-            "",
-            "",
-            listOf("", "")
+            "Question 4",
+            "Correct Answer",
+            listOf("Incorrect Answer 1", "Incorrect Answer 2", "Incorrect Answer 3")
         ),
 
         Question(
-            "",
-            "",
-            listOf("", "")
+            "Question 5",
+            "Correct Answer",
+            listOf("Incorrect Answer 1", "Incorrect Answer 2", "Incorrect Answer 3")
         ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        ),
-
-        Question(
-            "",
-            "",
-            listOf("", "")
-        )
     )
 }

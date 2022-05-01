@@ -5,14 +5,7 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.elijake.twentivia.network.TriviaAPI;
-
-
-/* NOTES:
-    - should have an adapter for question objects (like Affirmations) and API call should call 20 at once with categories and difficulty
-
- */
-
+import com.elijake.twentivia.network.TriviaAPI
 
 class TriviaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,8 +30,4 @@ class TriviaActivity : AppCompatActivity() {
 
 
     }
-    /*
-    fun get (): String {
-        findViewById<TextView>(R.id.question).text = get("https://the-trivia-api.com/api/questions?limit=1");
-    }*/
 }
