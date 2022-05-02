@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.button);
 
         button.setOnClickListener {
-            val intent = Intent(this, Category::class.java)
+            val intent = Intent(this, TriviaActivity::class.java)
             startActivity(intent)
         }
     }

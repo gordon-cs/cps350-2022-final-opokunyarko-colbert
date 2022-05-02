@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.elijake.twentivia.data.DataSource
 import com.elijake.twentivia.model.TriviaQuestion
-import kotlinx.coroutines.NonCancellable.cancel
 
 class TriviaActivity : AppCompatActivity() {
 
@@ -46,18 +45,18 @@ class TriviaActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.grade).isVisible = true
                 if (button.text == DataSource.triviaQuestions[questionCount].correctAnswer) {
                     findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(0,250,0))
-                    findViewById<TextView>(R.id.grade).text = "Thats Correct!!"
+                    findViewById<TextView>(R.id.grade).text = "That's correct!!"
                     score++
                 } else {
                     findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(250,0,0))
-                    findViewById<TextView>(R.id.grade).text = "Thats Incorrect!!"
+                    findViewById<TextView>(R.id.grade).text = "The correct answer was '${DataSource.triviaQuestions[questionCount].correctAnswer}'!!"
                 }
                 Handler(Looper.getMainLooper()).postDelayed(
                     {
                         questionCount++
                         setQuestion(DataSource.triviaQuestions[questionCount])
                     },
-                    2000 //value in miliseconds
+                    3000 //value in miliseconds
                 )
             }
         }
@@ -93,19 +92,27 @@ class TriviaActivity : AppCompatActivity() {
 
     fun newTimer() {
         timer = object : CountDownTimer(11000, 1000) {
-
             override fun onTick(millisUntilFinished: Long) {
                 findViewById<TextView>(R.id.timer).text = "Time remaining: ${millisUntilFinished / 1000}"
             }
-
             override fun onFinish() {
                 findViewById<TextView>(R.id.grade).isVisible = true
                 findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(250, 0, 0))
                 findViewById<TextView>(R.id.grade).text = "You ran out of time!!"
-                questionCount++
-                setQuestion(DataSource.triviaQuestions[questionCount])
-
+                Handler(Looper.getMainLooper()).postDelayed(
+                    {
+                        questionCount++
+                        setQuestion(DataSource.triviaQuestions[questionCount])
+                    },
+                    3000 //value in miliseconds
+                )
             }
         }.start()
     }
 }
+
+
+// Notes for further work:
+// - occasional timer bug where questions 'skip' or timer 'looses time'/'keeps running'
+// - after all questions answered, app crashes
+// - no initial "3, 2, 1, go!" for trivia begin, so questions start when user isn't ready

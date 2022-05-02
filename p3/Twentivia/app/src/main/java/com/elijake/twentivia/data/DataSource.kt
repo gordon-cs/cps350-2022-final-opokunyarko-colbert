@@ -11,15 +11,15 @@ object DataSource{
         ),
 
         TriviaQuestion(
-            "Question 2",
-            "Correct Answer",
-            listOf("Incorrect Answer 1", "Incorrect Answer 2", "Incorrect Answer 3")
+            "What is the 13th letter in the alphabet?",
+            "M",
+            listOf("J", "Q", "L")
         ),
 
         TriviaQuestion(
-            "Question 3",
-            "Correct Answer",
-            listOf("Incorrect Answer 1", "Incorrect Answer 2", "Incorrect Answer 3")
+            "Who's on first?",
+            "",
+            listOf("What?", "When?", "Where?")
         ),
 
         TriviaQuestion(
