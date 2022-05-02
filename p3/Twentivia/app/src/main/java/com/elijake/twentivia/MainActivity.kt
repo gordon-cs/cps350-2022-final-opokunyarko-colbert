@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.navigation.fragment.NavHostFragment
+import com.elijake.twentivia.network.TriviaAPI
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.button);
 
         button.setOnClickListener {
-            val intent = Intent(this, Category::class.java)
+            val intent = Intent(this, TriviaActivity::class.java)
             startActivity(intent)
         }
     }

@@ -1,12 +1,30 @@
 package com.elijake.twentivia.model
 
-/**
- * A data class to represent the information presented in a question
- */
+import java.util.*
+
 data class Question(
-    // might not even need it tbh, it creates an object type to make a list of question types (see Dogglers app)
-    // do they need to be private?
-    val question: String,
-    val correctAnswer: String,
-    val incorrectAnswers: String
-)
+    private val question: String,
+    private val correctAnswer: String,
+    private val incorrectAnswers: List<String>
+) {
+    fun getQuestion(): String {
+        return question
+    }
+
+    fun getCorrectAnswer(): String {
+        return correctAnswer
+    }
+
+    /**Get 4 possible answers to a trivia question in a random order
+     *
+     * @return List<String> answers - a list of possible answers
+    </String> */
+    fun getShuffledAnswers(): List<String> {
+        val answers: MutableList<String> = ArrayList()
+        answers.addAll(incorrectAnswers)
+        answers.add(correctAnswer)
+        answers.shuffle()
+        return answers
+    }
+}
+
