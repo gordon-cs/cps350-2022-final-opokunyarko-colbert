@@ -11,24 +11,31 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.elijake.twentivia.data.DataSource
-import com.elijake.twentivia.model.TriviaQuestion
+import com.elijake.twentivia.model.Question
+import com.elijake.twentivia.network.TriviaAPI
+
+private const val TAG = "TriviaActivity"
 
 class TriviaActivity : AppCompatActivity() {
 
     var questionCount = 0;
     var score = 0;
-    private lateinit var timer: CountDownTimer
+    private lateinit var theTimer: CountDownTimer
+    private lateinit var triviaQuestions: List<Question>
+    var loading = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide();
         setContentView(R.layout.activity_questions)
 
-        /* Thread {
+        Thread {
             // network calls need to be done in threads
-            TriviaAPI.getTrivia("https://the-trivia-api.com/api/questions?limit=20")
-        }.start() */
+            triviaQuestions = TriviaAPI.getTrivia("https://the-trivia-api.com/api/questions?limit=20")
+            loading = false
+        }.start()
+
+        while(loading) { }
 
         val backButton = findViewById<ImageView>(R.id.imageView2);
 
@@ -41,20 +48,20 @@ class TriviaActivity : AppCompatActivity() {
 
         for (button in answers) {
             button.setOnClickListener {
-                timer.cancel()
+                theTimer.cancel()
                 findViewById<TextView>(R.id.grade).isVisible = true
-                if (button.text == DataSource.triviaQuestions[questionCount].correctAnswer) {
+                if (button.text == triviaQuestions[questionCount].getCorrectAnswer()){
                     findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(0,250,0))
                     findViewById<TextView>(R.id.grade).text = "That's correct!!"
-                    score++
+                    findViewById<TextView>(R.id.score).text = "${++score}/${triviaQuestions.size}"
                 } else {
                     findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(250,0,0))
-                    findViewById<TextView>(R.id.grade).text = "The correct answer was '${DataSource.triviaQuestions[questionCount].correctAnswer}'!!"
+                    findViewById<TextView>(R.id.grade).text = "The correct answer was '${triviaQuestions[questionCount].getCorrectAnswer()}'!!"
                 }
                 Handler(Looper.getMainLooper()).postDelayed(
                     {
                         questionCount++
-                        setQuestion(DataSource.triviaQuestions[questionCount])
+                        setQuestion(triviaQuestions[questionCount])
                     },
                     3000 //value in miliseconds
                 )
@@ -62,21 +69,20 @@ class TriviaActivity : AppCompatActivity() {
         }
 
         backButton.setOnClickListener {
-            timer.cancel()
+            theTimer.cancel()
             val intent: Intent = Intent(this, Category::class.java);
             startActivity(intent)
         }
 
-        findViewById<TextView>(R.id.score).text = "${score}/${DataSource.triviaQuestions.size}"
-        setQuestion(DataSource.triviaQuestions[questionCount])
+        findViewById<TextView>(R.id.score).text = "${score}/${triviaQuestions.size}"
+        setQuestion(triviaQuestions[questionCount])
     }
 
-    fun setQuestion(question : TriviaQuestion) {
+    fun setQuestion(question : Question) {
         findViewById<TextView>(R.id.grade).isVisible = false
-        findViewById<TextView>(R.id.score).text = "${score}/${DataSource.triviaQuestions.size}"
-        if (questionCount < 5) {
-            findViewById<TextView>(R.id.main_question).text = question.question
-            setAnswers(DataSource.triviaQuestions[questionCount].shuffledAnswers)
+        if (questionCount < triviaQuestions.size) {
+            findViewById<TextView>(R.id.main_question).text = question.getQuestion()
+            setAnswers(triviaQuestions[questionCount].getShuffledAnswers())
         } else {
             findViewById<TextView>(R.id.main_question).text = "All done"
         }
@@ -91,7 +97,7 @@ class TriviaActivity : AppCompatActivity() {
     }
 
     fun newTimer() {
-        timer = object : CountDownTimer(11000, 1000) {
+        theTimer = object : CountDownTimer(11000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 findViewById<TextView>(R.id.timer).text = "Time remaining: ${millisUntilFinished / 1000}"
             }
@@ -102,7 +108,7 @@ class TriviaActivity : AppCompatActivity() {
                 Handler(Looper.getMainLooper()).postDelayed(
                     {
                         questionCount++
-                        setQuestion(DataSource.triviaQuestions[questionCount])
+                        setQuestion(triviaQuestions[questionCount])
                     },
                     3000 //value in miliseconds
                 )
@@ -116,3 +122,5 @@ class TriviaActivity : AppCompatActivity() {
 // - occasional timer bug where questions 'skip' or timer 'looses time'/'keeps running'
 // - after all questions answered, app crashes
 // - no initial "3, 2, 1, go!" for trivia begin, so questions start when user isn't ready
+// - button for next question?
+//      - button allows user to pace each question? ruins the intensity of fast paced trivia...

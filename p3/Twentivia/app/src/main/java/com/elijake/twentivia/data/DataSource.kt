@@ -1,37 +1,37 @@
 package com.elijake.twentivia.data
 
-import com.elijake.twentivia.model.TriviaQuestion
+import com.elijake.twentivia.model.Question
 
 object DataSource{
-    val triviaQuestions: List<TriviaQuestion> = listOf(
-        TriviaQuestion(
+    val triviaQuestions: List<Question> = listOf(
+        Question(
             "In which book does 'The Hatter' appear?",
             "Through the Looking-Glass",
             listOf("Mio, My Son", "Jonathan Strange & Mr Norrell", "The Stand")
         ),
 
-        TriviaQuestion(
+        Question(
             "What is the 13th letter in the alphabet?",
             "M",
             listOf("J", "Q", "L")
         ),
 
-        TriviaQuestion(
-            "Who's on first?",
-            "",
-            listOf("What?", "When?", "Where?")
+        Question(
+            "What is the correct spelling of 'accommodate' (you'll never guess)?",
+            "accommodate",
+            listOf("accomodate", "acommodate", "occommodate")
         ),
 
-        TriviaQuestion(
-            "Question 4",
-            "Correct Answer",
-            listOf("Incorrect Answer 1", "Incorrect Answer 2", "Incorrect Answer 3")
+        Question(
+            "Which planet is the largest in our solar system?",
+            "Jupiter",
+            listOf("Earth", "Saturn", "Neptune")
         ),
 
-        TriviaQuestion(
-            "Question 5",
-            "Correct Answer",
-            listOf("Incorrect Answer 1", "Incorrect Answer 2", "Incorrect Answer 3")
+        Question(
+            "How many sides are their to an octagon?",
+            "8",
+            listOf("9", "5", "3")
         ),
     )
 }
