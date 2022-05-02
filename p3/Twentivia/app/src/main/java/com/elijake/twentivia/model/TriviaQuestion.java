@@ -5,22 +5,18 @@ import java.util.*;
 
 public class TriviaQuestion {
 
-    private String question;
-    private String correctAnswer;
-    private List<String> incorrectAnswers;
+    // constructor
 
-    /**Get the question of a trivia question
-     *
-     * @return String question - the queston
-     */
+    public TriviaQuestion(String question, String correctAnswer, List<String> incorrectAnswers) {
+        this.question = question;
+        this.correctAnswer = correctAnswer;
+        this.incorrectAnswers = incorrectAnswers;
+    }
+
     public String getQuestion() {
         return question;
     }
 
-    /**Get the correct answer of a trivia question
-     *
-     * @return String correctAnswer - the correct answer
-     */
     public String getCorrectAnswer() {
         return correctAnswer;
     }
@@ -30,7 +26,7 @@ public class TriviaQuestion {
      * @return List<String> answers - a list of possible answers
      */
     public List<String> getShuffledAnswers() {
-        List<String> answers = null;
+        List<String> answers = new ArrayList<String>();
         answers.addAll(incorrectAnswers);
         answers.add(correctAnswer);
 
@@ -38,4 +34,8 @@ public class TriviaQuestion {
 
         return answers;
     }
+
+    private String question;
+    private String correctAnswer;
+    private List<String> incorrectAnswers;
 }
