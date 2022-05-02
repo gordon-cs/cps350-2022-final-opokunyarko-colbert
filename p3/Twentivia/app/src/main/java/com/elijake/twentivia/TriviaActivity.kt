@@ -48,12 +48,12 @@ class TriviaActivity : AppCompatActivity() {
 
         val answers = listOf(answerA, answerB, answerC, answerD)
 
-        unlockButtons(answers)
+        unlockAnswers()
 
         for (button in answers) {
             button.setOnClickListener {
 
-                lockButtons(answers)
+                lockAnswers()
                 theTimer.cancel()
 
                 findViewById<TextView>(R.id.grade).isVisible = true
@@ -70,7 +70,7 @@ class TriviaActivity : AppCompatActivity() {
                     {
                         questionCount++
                         setQuestion(triviaQuestions[questionCount])
-                        unlockButtons(answers)
+                        unlockAnswers()
                     },
                     3000 //value in miliseconds
                 )
@@ -87,7 +87,7 @@ class TriviaActivity : AppCompatActivity() {
         setQuestion(triviaQuestions[questionCount])
     }
 
-    fun setQuestion(question : Question) {
+    private fun setQuestion(question : Question) {
         findViewById<TextView>(R.id.grade).isVisible = false
         if (questionCount < triviaQuestions.size) {
             findViewById<TextView>(R.id.questionNum).text = "${questionCount + 1}."
@@ -99,20 +99,21 @@ class TriviaActivity : AppCompatActivity() {
         newTimer()
     }
 
-    fun setAnswers(answers : List<String>) {
+    private fun setAnswers(answers : List<String>) {
         findViewById<Button>(R.id.answerA).text = answers[0]
         findViewById<Button>(R.id.answerB).text = answers[1]
         findViewById<Button>(R.id.answerC).text = answers[2]
         findViewById<Button>(R.id.answerD).text = answers[3]
     }
 
-    fun newTimer() {
+    private fun newTimer() {
         theTimer = object : CountDownTimer(11000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 findViewById<TextView>(R.id.timer).text = "Time remaining: ${millisUntilFinished / 1000}"
             }
             override fun onFinish() {
                 findViewById<TextView>(R.id.grade).isVisible = true
+                lockAnswers()
                 findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(250, 0, 0))
                 findViewById<TextView>(R.id.grade).text = "You ran out of time!!"
                 Handler(Looper.getMainLooper()).postDelayed(
@@ -126,16 +127,17 @@ class TriviaActivity : AppCompatActivity() {
         }.start()
     }
 
-    fun unlockButtons(buttons: List<Button>) {
-        for (button in buttons) {
-            button.isClickable = true;
-        }
+    private fun unlockAnswers() {
+        findViewById<Button>(R.id.answerA).isClickable = true
+        findViewById<Button>(R.id.answerB).isClickable = true
+        findViewById<Button>(R.id.answerC).isClickable = true
+        findViewById<Button>(R.id.answerD).isClickable = true
     }
-
-    fun lockButtons(buttons: List<Button>) {
-        for (button in buttons) {
-            button.isClickable = false;
-        }
+    private fun lockAnswers() {
+        findViewById<Button>(R.id.answerA).isClickable = false
+        findViewById<Button>(R.id.answerB).isClickable = false
+        findViewById<Button>(R.id.answerC).isClickable = false
+        findViewById<Button>(R.id.answerD).isClickable = false
     }
 }
 
