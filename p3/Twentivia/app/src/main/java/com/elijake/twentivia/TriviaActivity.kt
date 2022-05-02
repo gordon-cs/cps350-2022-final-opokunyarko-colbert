@@ -29,9 +29,11 @@ class TriviaActivity : AppCompatActivity() {
         supportActionBar?.hide();
         setContentView(R.layout.activity_questions)
 
+
+
         Thread {
             // network calls need to be done in threads
-            triviaQuestions = TriviaAPI.getTrivia("https://the-trivia-api.com/api/questions?limit=20")
+            triviaQuestions = TriviaAPI.getTrivia("https://the-trivia-api.com/api/questions?limit=5")
             loading = false
         }.start()
 
@@ -46,9 +48,14 @@ class TriviaActivity : AppCompatActivity() {
 
         val answers = listOf(answerA, answerB, answerC, answerD)
 
+        unlockButtons(answers)
+
         for (button in answers) {
             button.setOnClickListener {
+
+                lockButtons(answers)
                 theTimer.cancel()
+
                 findViewById<TextView>(R.id.grade).isVisible = true
                 if (button.text == triviaQuestions[questionCount].getCorrectAnswer()){
                     findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(0,250,0))
@@ -58,10 +65,12 @@ class TriviaActivity : AppCompatActivity() {
                     findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(250,0,0))
                     findViewById<TextView>(R.id.grade).text = "The correct answer was '${triviaQuestions[questionCount].getCorrectAnswer()}'!!"
                 }
+
                 Handler(Looper.getMainLooper()).postDelayed(
                     {
                         questionCount++
                         setQuestion(triviaQuestions[questionCount])
+                        unlockButtons(answers)
                     },
                     3000 //value in miliseconds
                 )
@@ -81,6 +90,7 @@ class TriviaActivity : AppCompatActivity() {
     fun setQuestion(question : Question) {
         findViewById<TextView>(R.id.grade).isVisible = false
         if (questionCount < triviaQuestions.size) {
+            findViewById<TextView>(R.id.questionNum).text = "${questionCount + 1}."
             findViewById<TextView>(R.id.main_question).text = question.getQuestion()
             setAnswers(triviaQuestions[questionCount].getShuffledAnswers())
         } else {
@@ -115,12 +125,29 @@ class TriviaActivity : AppCompatActivity() {
             }
         }.start()
     }
+
+    fun unlockButtons(buttons: List<Button>) {
+        for (button in buttons) {
+            button.isClickable = true;
+        }
+    }
+
+    fun lockButtons(buttons: List<Button>) {
+        for (button in buttons) {
+            button.isClickable = false;
+        }
+    }
 }
 
 
 // Notes for further work:
 // - occasional timer bug where questions 'skip' or timer 'looses time'/'keeps running'
+// - UI changes, specifically purple highlights
 // - after all questions answered, app crashes
 // - no initial "3, 2, 1, go!" for trivia begin, so questions start when user isn't ready
 // - button for next question?
 //      - button allows user to pace each question? ruins the intensity of fast paced trivia...
+// - answer can be changed after submission
+// - correct answer chosen after timer depletion executes questionCount++ twice,
+//   once at timer run out and once at correct answer
+// - answer should submit and lock other buttons
