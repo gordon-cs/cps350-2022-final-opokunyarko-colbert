@@ -26,7 +26,7 @@ class Stats : AppCompatActivity() {
 
         val nextBtn = findViewById<ImageButton>(R.id.next_btn);
         nextBtn.setOnClickListener {
-            val intent: Intent = Intent(this, Category::class.java);
+            val intent: Intent = Intent(this, CategoryActivity::class.java);
             startActivity(intent)
         }
 

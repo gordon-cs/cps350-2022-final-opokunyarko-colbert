@@ -17,7 +17,7 @@
             android:label="@string/title_activity_stats"
             android:theme="@style/Theme.Twentivia.NoActionBar" />
         <activity
-            android:name=".Category"
+            android:name=".CategoryActivity"
             android:exported="false"
             android:label="Categories"
             android:theme="@style/Theme.Twentivia.NoActionBar" />

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -33,8 +34,9 @@ class TriviaActivity : AppCompatActivity() {
 
         Thread {
             // network calls need to be done in threads
-            triviaQuestions = TriviaAPI.getTrivia("https://the-trivia-api.com/api/questions?limit=5")
+            triviaQuestions = TriviaAPI.getTrivia(intent.getStringArrayListExtra("selected_categories") as ArrayList<String>)
             loading = false
+            Log.d(TAG, "Trivia received")
         }.start()
 
         while(loading) { }
@@ -79,7 +81,7 @@ class TriviaActivity : AppCompatActivity() {
 
         backButton.setOnClickListener {
             theTimer.cancel()
-            val intent: Intent = Intent(this, Category::class.java);
+            val intent: Intent = Intent(this, CategoryActivity::class.java);
             startActivity(intent)
         }
 
@@ -89,6 +91,7 @@ class TriviaActivity : AppCompatActivity() {
 
     private fun setQuestion(question : Question) {
         findViewById<TextView>(R.id.grade).isVisible = false
+        unlockAnswers()
         if (questionCount < triviaQuestions.size) {
             findViewById<TextView>(R.id.questionNum).text = "${questionCount + 1}."
             findViewById<TextView>(R.id.main_question).text = question.getQuestion()
@@ -143,13 +146,8 @@ class TriviaActivity : AppCompatActivity() {
 
 
 // Notes for further work:
-// - occasional timer bug where questions 'skip' or timer 'looses time'/'keeps running'
 // - UI changes, specifically purple highlights
 // - after all questions answered, app crashes
 // - no initial "3, 2, 1, go!" for trivia begin, so questions start when user isn't ready
 // - button for next question?
 //      - button allows user to pace each question? ruins the intensity of fast paced trivia...
-// - answer can be changed after submission
-// - correct answer chosen after timer depletion executes questionCount++ twice,
-//   once at timer run out and once at correct answer
-// - answer should submit and lock other buttons
