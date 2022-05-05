@@ -1,6 +1,7 @@
 package com.elijake.twentivia.data
 
 import com.elijake.twentivia.model.Question
+import com.elijake.twentivia.model.Stat
 
 object DataSource{
     val triviaQuestions: List<Question> = listOf(
@@ -33,5 +34,22 @@ object DataSource{
             "8",
             listOf("9", "5", "3")
         ),
+    )
+    val stats: List<Stat> = listOf(
+        Stat(
+            "Math",
+        100,
+        90
+        ),
+        Stat(
+            "Film",
+            30,
+            30
+        ),
+        Stat(
+            "Language",
+            59,
+        20
+        )
     )
 }

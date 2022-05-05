@@ -3,16 +3,16 @@ package com.elijake.twentivia.model
 import java.util.*
 
 data class Question(
-    private val question: String,
-    private val correctAnswer: String,
-    private val incorrectAnswers: List<String>
+    private val _question: String,
+    private val _correctAnswer: String,
+    private val _incorrectAnswers: List<String>
 ) {
     fun getQuestion(): String {
-        return question
+        return _question
     }
 
     fun getCorrectAnswer(): String {
-        return correctAnswer
+        return _correctAnswer
     }
 
     /**Get 4 possible answers to a trivia question in a random order
@@ -21,8 +21,8 @@ data class Question(
     </String> */
     fun getShuffledAnswers(): List<String> {
         val answers: MutableList<String> = ArrayList()
-        answers.addAll(incorrectAnswers)
-        answers.add(correctAnswer)
+        answers.addAll(_incorrectAnswers)
+        answers.add(_correctAnswer)
         answers.shuffle()
         return answers
     }
