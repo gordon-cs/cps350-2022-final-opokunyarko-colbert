@@ -20,7 +20,7 @@ object TriviaAPI {
             url += categories[i]
             Log.d(TAG, "Adding ${categories[i]}")
         }
-        url += categories[categories.size - 1]
+        url += categories[categories.size - 1] + "&limit=20"
 
         Log.d(TAG, "Attempting connection to: $url")
 

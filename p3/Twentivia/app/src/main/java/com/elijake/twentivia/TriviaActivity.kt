@@ -19,18 +19,16 @@ private const val TAG = "TriviaActivity"
 
 class TriviaActivity : AppCompatActivity() {
 
-    var questionCount = 0;
-    var score = 0;
+    var questionCount = 0
+    var score = 0
+    var loading = true
     private lateinit var theTimer: CountDownTimer
     private lateinit var triviaQuestions: List<Question>
-    var loading = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide();
+        supportActionBar?.hide()
         setContentView(R.layout.activity_questions)
-
-
 
         Thread {
             // network calls need to be done in threads
