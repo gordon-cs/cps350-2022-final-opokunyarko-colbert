@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -18,21 +19,22 @@ private const val TAG = "TriviaActivity"
 
 class TriviaActivity : AppCompatActivity() {
 
-    var questionCount = 0;
-    var score = 0;
+    var questionCount = 0
+    var score = 0
+    var loading = true
     private lateinit var theTimer: CountDownTimer
     private lateinit var triviaQuestions: List<Question>
-    var loading = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide();
+        supportActionBar?.hide()
         setContentView(R.layout.activity_questions)
 
         Thread {
             // network calls need to be done in threads
-            triviaQuestions = TriviaAPI.getTrivia("https://the-trivia-api.com/api/questions?limit=20")
+            triviaQuestions = TriviaAPI.getTrivia(intent.getStringArrayListExtra("selected_categories") as ArrayList<String>)
             loading = false
+            Log.d(TAG, "Trivia received")
         }.start()
 
         while(loading) { }
@@ -46,9 +48,14 @@ class TriviaActivity : AppCompatActivity() {
 
         val answers = listOf(answerA, answerB, answerC, answerD)
 
+        unlockAnswers()
+
         for (button in answers) {
             button.setOnClickListener {
+
+                lockAnswers()
                 theTimer.cancel()
+
                 findViewById<TextView>(R.id.grade).isVisible = true
                 if (button.text == triviaQuestions[questionCount].getCorrectAnswer()){
                     findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(0,250,0))
@@ -58,10 +65,12 @@ class TriviaActivity : AppCompatActivity() {
                     findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(250,0,0))
                     findViewById<TextView>(R.id.grade).text = "The correct answer was '${triviaQuestions[questionCount].getCorrectAnswer()}'!!"
                 }
+
                 Handler(Looper.getMainLooper()).postDelayed(
                     {
                         questionCount++
                         setQuestion(triviaQuestions[questionCount])
+                        unlockAnswers()
                     },
                     3000 //value in miliseconds
                 )
@@ -70,7 +79,7 @@ class TriviaActivity : AppCompatActivity() {
 
         backButton.setOnClickListener {
             theTimer.cancel()
-            val intent: Intent = Intent(this, Category::class.java);
+            val intent: Intent = Intent(this, CategoryActivity::class.java);
             startActivity(intent)
         }
 
@@ -78,9 +87,11 @@ class TriviaActivity : AppCompatActivity() {
         setQuestion(triviaQuestions[questionCount])
     }
 
-    fun setQuestion(question : Question) {
+    private fun setQuestion(question : Question) {
         findViewById<TextView>(R.id.grade).isVisible = false
+        unlockAnswers()
         if (questionCount < triviaQuestions.size) {
+            findViewById<TextView>(R.id.questionNum).text = "${questionCount + 1}."
             findViewById<TextView>(R.id.main_question).text = question.getQuestion()
             setAnswers(triviaQuestions[questionCount].getShuffledAnswers())
         } else {
@@ -89,20 +100,21 @@ class TriviaActivity : AppCompatActivity() {
         newTimer()
     }
 
-    fun setAnswers(answers : List<String>) {
+    private fun setAnswers(answers : List<String>) {
         findViewById<Button>(R.id.answerA).text = answers[0]
         findViewById<Button>(R.id.answerB).text = answers[1]
         findViewById<Button>(R.id.answerC).text = answers[2]
         findViewById<Button>(R.id.answerD).text = answers[3]
     }
 
-    fun newTimer() {
+    private fun newTimer() {
         theTimer = object : CountDownTimer(11000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 findViewById<TextView>(R.id.timer).text = "Time remaining: ${millisUntilFinished / 1000}"
             }
             override fun onFinish() {
                 findViewById<TextView>(R.id.grade).isVisible = true
+                lockAnswers()
                 findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(250, 0, 0))
                 findViewById<TextView>(R.id.grade).text = "You ran out of time!!"
                 Handler(Looper.getMainLooper()).postDelayed(
@@ -115,11 +127,24 @@ class TriviaActivity : AppCompatActivity() {
             }
         }.start()
     }
+
+    private fun unlockAnswers() {
+        findViewById<Button>(R.id.answerA).isClickable = true
+        findViewById<Button>(R.id.answerB).isClickable = true
+        findViewById<Button>(R.id.answerC).isClickable = true
+        findViewById<Button>(R.id.answerD).isClickable = true
+    }
+    private fun lockAnswers() {
+        findViewById<Button>(R.id.answerA).isClickable = false
+        findViewById<Button>(R.id.answerB).isClickable = false
+        findViewById<Button>(R.id.answerC).isClickable = false
+        findViewById<Button>(R.id.answerD).isClickable = false
+    }
 }
 
 
 // Notes for further work:
-// - occasional timer bug where questions 'skip' or timer 'looses time'/'keeps running'
+// - UI changes, specifically purple highlights
 // - after all questions answered, app crashes
 // - no initial "3, 2, 1, go!" for trivia begin, so questions start when user isn't ready
 // - button for next question?
