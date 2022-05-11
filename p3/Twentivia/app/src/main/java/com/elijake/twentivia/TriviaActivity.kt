@@ -58,12 +58,15 @@ class TriviaActivity : AppCompatActivity() {
 
                 findViewById<TextView>(R.id.grade).isVisible = true
                 if (button.text == triviaQuestions[questionCount].getCorrectAnswer()){
-                    findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(0,250,0))
+                    findViewById<TextView>(R.id.grade)
+                        .setTextColor(Color.rgb(0,250,0))
                     findViewById<TextView>(R.id.grade).text = "That's correct!!"
                     findViewById<TextView>(R.id.score).text = "${++score}/${triviaQuestions.size}"
                 } else {
                     findViewById<TextView>(R.id.grade).setTextColor(Color.rgb(250,0,0))
-                    findViewById<TextView>(R.id.grade).text = "The correct answer was '${triviaQuestions[questionCount].getCorrectAnswer()}'!!"
+                    findViewById<TextView>(R.id.grade)
+                        .text = "The correct answer was " +
+                        "'${triviaQuestions[questionCount].getCorrectAnswer()}'!!"
                 }
 
                 Handler(Looper.getMainLooper()).postDelayed(

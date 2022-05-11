@@ -1,0 +1,10 @@
+syntax = "proto3";
+option java_package = "com.elijake.twentivia";
+option java_multiple_files = true;
+
+message UserStat {
+  // DO NOT CHANGE NUMBERS
+  repeated string subject = 1;
+  repeated int32 questionsAnswered = 2;
+  repeated int32 correctQuestionsAnswered = 3;
+}
